@@ -25,12 +25,13 @@ export default function TabLayout() {
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
+        headerStyle:{backgroundColor:'blue'},
       }}>
       <Tabs.Screen
         name="index"
         options={{
           title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -51,7 +52,23 @@ export default function TabLayout() {
         name="two"
         options={{
           title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="image" color={color} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name="anotherTab"
+        options={{
+          title: 'Another Tab',
+          tabBarIcon: ({ color }) => <TabBarIcon name="anchor" color={color} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name="anotherTab2"
+        options={{
+          title: 'Another Tab2',
+          tabBarIcon: ({ color }) => <TabBarIcon name="bars" color={color} />,
         }}
       />
     </Tabs>
